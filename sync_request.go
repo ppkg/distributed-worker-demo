@@ -47,7 +47,7 @@ func regSyncRequest() {
 		fmt.Fprintf(rw, "同步请求完成，时间:%s，耗时：%f秒，job状态:%d，返回结果:%s <br/>", endTime.Format("2006-01-02 15:04:05"), endTime.Sub(startTime).Seconds(), resp.Status, resp.Result)
 
 		fmt.Fprintf(rw, "-------------------------------------------------------------<br>")
-		fmt.Fprintf(rw, "最终计算结果：%d <br/>", computeResult(resp.Result))
+		fmt.Fprintf(rw, "jobId:%d,最终计算结果：%d <br/>",resp.Id, computeResult(resp.Result))
 	})
 }
 
