@@ -177,6 +177,8 @@ github.com/ppkg/distributed-worker v0.0.0-20220117105913-7aeaa45bb4e3 h1:TpOYlzG
 github.com/ppkg/distributed-worker v0.0.0-20220117105913-7aeaa45bb4e3/go.mod h1:McMhaN9Kp2haYfEdIq5LkCCNOld82zNXX2bgbWBDiaw=
 github.com/ppkg/distributed-worker v0.0.0-20220117112554-eca73cfa463e h1:K8Sf/neIugEB+9Sk1H1K+wFSGjDDwTWsPzmvtaPW5Is=
 github.com/ppkg/distributed-worker v0.0.0-20220117112554-eca73cfa463e/go.mod h1:McMhaN9Kp2haYfEdIq5LkCCNOld82zNXX2bgbWBDiaw=
+github.com/ppkg/distributed-worker v0.0.0-20220117114804-1275acdcc6c0 h1:R/8slO93qkBM8iJQiJ67NcrPYs2TQojCNSTweRflP6k=
+github.com/ppkg/distributed-worker v0.0.0-20220117114804-1275acdcc6c0/go.mod h1:McMhaN9Kp2haYfEdIq5LkCCNOld82zNXX2bgbWBDiaw=
 github.com/ppkg/glog v0.0.0-20210823095502-427659edeb41 h1:B+1TGuyJF9tZ/lIq+YKjfEAMuL5UbcHf5HDngD5/9NA=
 github.com/ppkg/glog v0.0.0-20210823095502-427659edeb41/go.mod h1:vDaivA32OksBlRelHMfcUF+RqCdOUhX1ptrtuNVWZxc=
 github.com/ppkg/kit v0.0.0-20210823101229-cd1ff728fbc4 h1:x8BsXlovwI1dN10kLqkPQu4XMiQMDajnSl9bNzvQTPI=
