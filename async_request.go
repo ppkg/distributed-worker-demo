@@ -15,6 +15,7 @@ func regAsyncRequest() {
 		rw.WriteHeader(http.StatusOK)
 		rpcReq := dto.AsyncJobRequest{
 			Name: "async-job异步job",
+			Label: "sn0001",
 			PluginSet: []string{
 				"plus",
 				"multi",
