@@ -29,6 +29,12 @@ func main() {
 		return handler.NewPlus()
 	}).RegisterPlugin(func(ctx *core.ApplicationContext) core.PluginHandler {
 		return handler.NewMulti()
+	}).RegisterPlugin(func(ctx *core.ApplicationContext) core.PluginHandler {
+		return handler.NewSub()
+	}).RegisterPlugin(func(ctx *core.ApplicationContext) core.PluginHandler {
+		return handler.NewPlus2()
+	}).RegisterPlugin(func(ctx *core.ApplicationContext) core.PluginHandler {
+		return handler.NewExclusive()
 	})
 
 	// 注册回调通知

@@ -7,12 +7,15 @@ import (
 	"time"
 
 	"github.com/ppkg/distributed-worker/dto"
+	"github.com/ppkg/distributed-worker/enum"
 	"github.com/ppkg/kit"
 )
 
 func init() {
 	regSyncRequest()
 	regAsyncRequest()
+	regAsyncLimitRequest()
+	regAsyncParallelRequest()
 }
 
 func regSyncRequest() {
@@ -21,8 +24,9 @@ func regSyncRequest() {
 		rw.WriteHeader(http.StatusOK)
 
 		rpcReq := dto.SyncJobRequest{
-			Name:  "sync-job同步job",
-			Label: "sn0002",
+			Name:                   "sync-job同步job",
+			Label:                  "sn0002",
+			TaskExceptionOperation: enum.ContinueTaskExceptionOperation,
 			PluginSet: []string{
 				"plus",
 				"multi",
@@ -45,7 +49,11 @@ func regSyncRequest() {
 		}
 
 		fmt.Fprintf(rw, "-------------------------------------------------------------<br>")
-		fmt.Fprintf(rw, "同步请求完成，时间:%s，耗时：%f秒，job状态:%d，返回结果:%s <br/>", endTime.Format("2006-01-02 15:04:05"), endTime.Sub(startTime).Seconds(), resp.Status, resp.Result)
+		msg := resp.Result
+		if resp.Status != enum.FinishJobStatus {
+			msg = resp.Message
+		}
+		fmt.Fprintf(rw, "同步请求完成，时间:%s，耗时：%f秒，job状态:%d，返回结果:%s <br/>", endTime.Format("2006-01-02 15:04:05"), endTime.Sub(startTime).Seconds(), resp.Status, msg)
 
 		fmt.Fprintf(rw, "-------------------------------------------------------------<br>")
 		fmt.Fprintf(rw, "jobId:%d,最终计算结果：%d <br/>", resp.Id, computeResult(resp.Result))
