@@ -27,7 +27,7 @@ func regAsyncRequest() {
 			Type:     "test",
 			IsNotify: true,
 		}
-		for i := 0; i < 5000; i++ {
+		for i := 0; i < 1000; i++ {
 			rpcReq.TaskInputList = append(rpcReq.TaskInputList, kit.JsonEncode(map[string]interface{}{
 				"a": 1,
 				"b": 2,
