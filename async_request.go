@@ -15,6 +15,10 @@ func regAsyncRequest() {
 		rw.WriteHeader(http.StatusOK)
 		rpcReq := dto.AsyncJobRequest{
 			Name: "async-job异步job",
+			Meta: map[string]string{
+				"author": "zihua",
+				"qq":     "597291437",
+			},
 			Label: "sn0001",
 			PluginSet: []string{
 				"plus",

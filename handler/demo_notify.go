@@ -7,6 +7,7 @@ import (
 	"github.com/ppkg/distributed-worker/core"
 	"github.com/ppkg/distributed-worker/dto"
 	"github.com/ppkg/distributed-worker/enum"
+	"github.com/ppkg/kit"
 )
 
 type demoNotify struct {
@@ -30,6 +31,12 @@ func (s *demoNotify) Handle(data dto.JobNotify) error {
 		result += item.Result
 	}
 	fmt.Printf("job(%d)执行成功,计算结果:%d \n", data.Id, result)
+	return nil
+}
+
+// job开始执行通知
+func (s *demoNotify) PostStart(data dto.StartNotify) error {
+	fmt.Println("任务开始执行了.....", kit.JsonEncode(data))
 	return nil
 }
 
