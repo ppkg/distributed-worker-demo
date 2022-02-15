@@ -8,4 +8,4 @@ require (
 	github.com/spf13/cast v1.4.1
 )
 
-// replace github.com/ppkg/distributed-worker => /home/zihua/Documents/goPath/src/github.com/ppkg/distributed-worker
+replace github.com/ppkg/distributed-worker => D:/goPath/src/github.com/ppkg/distributed-worker
